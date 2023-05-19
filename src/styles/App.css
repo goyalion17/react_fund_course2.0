@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.App_title {
+    text-align: center;
+}
+
+.post{
+    min-width: 800px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px;
+    border: 1px solid green;
+    border-radius: 3px;
+    padding: 5px 10px;
+}
+
+.post_btns> button {
+    background-color: green;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    border: 0;
+}
