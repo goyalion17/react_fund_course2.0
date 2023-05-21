@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MyButton from "./component/UI/button/MyButton"
 import PostList from "./component/PostList"
 import './styles/App.css'
+import MyInput from "./component/UI/input/MyInput";
 
 function App() {
   const [posts, setPosts] = useState([
@@ -9,12 +10,23 @@ function App() {
     {id: 2, title: 'Javascript1', body: 'Description'},
     {id: 3, title: 'Javascript2', body: 'Description'},
   ])
+
+  const [title, setTitle] = useState('ggg');
+
+  const addNewPost = () => {
+    console.log('title: ', title);
+  }
+
   return (
     <div className="App">
       <form>
-        <input type="text" placeholder="Post's name"/>
-        <input type="text" placeholder="Post's description"/>
-        <MyButton>Add new post</MyButton>
+        <MyInput 
+          value={title}
+          onChange={e => setTitle(e.target.value)}
+          type="text" 
+          placeholder="Post's name"/>
+        <MyInput type="text" placeholder="Post's description"/>
+        <MyButton onClick={addNewPost}>Add new post</MyButton>
       </form>
       <PostList posts={posts} title={'PostList JS'}/>
     </div>
